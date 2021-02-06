@@ -7,7 +7,7 @@
 //@SJAD100 /المطـور/ 
 // اشترك بقناه المطور من فضلك//
 ob_start(); 
-$API_KEY = "664272080";#توكن البوت 
+$API_KEY = "1124323028:AAFp6uHmMMVn9aovrL4Kq1n-ThGAav7cVuk";#توكن البوت 
 define('API_KEY',$API_KEY); 
 echo "<a href='https://api.telegram.org/bot$API_KEY/setwebhook?url=".$_SERVER['SERVER_NAME']."".$_SERVER['SCRIPT_NAME']."'>setwebhook</a>"; 
 echo file_get_contents("https://api.telegram.org/bot$API_KEY/setwebhook?url=".$_SERVER['SERVER_NAME']."".$_SERVER['SCRIPT_NAME']); 
@@ -32,18 +32,7 @@ $data       = $update->callback_query->data;
 $chat_id2   = $update->callback_query->message->chat->id;
 $message_id = $update->callback_query->message->message_id;
 
-$join = bot('getChatMember', ["chat_id" => "@LUA2PHP", "user_id" => $from_id])->result->status;
 
-if ($message && $join == 'left')
-  {
-  bot('sendMessage', ['chat_id' => $chat_id, 'text' => "عذرآ عزيزي⁉️
-عليك الاشــتراك لأســتخدام البــوت✅
-@LUA2PHP
-اشتــرك ثم ارســل /start ❕ من فضــلك", 'reply_markup' => json_encode(['inline_keyboard' => [[['text' => '• اضغط هنا للشترك -🔱 ', 'url' => 'https://t.me/LUA2PHP ']]]]) ]);
-  die('مشيولي');
-  }
-
-$ex = explode(' ', $text);
 
 
 ///////////////////
@@ -51,7 +40,7 @@ $ex = explode(' ', $text);
 $u = explode("\n",file_get_contents("pj.txt"));
 $c = count($u)-1;
 $modxe = file_get_contents("em.txt");
-$admin = "185520099"; /* ايدي مالتك */
+$admin = "201839212"; /* ايدي مالتك */
 #                بداية الاوامر                 #
 if ($update && !in_array($chat_id, $u)) {
     file_put_contents("pj.txt", $chat_id."\n",FILE_APPEND);
@@ -155,7 +144,7 @@ if($text == "/start"){
  ]);
  }
 
- @$link = file_get_contents("http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url=$text&format=sample");
+ @$link = file_get_contents("https://0i.is/api/?key=egSFcZ5liPZr&url=$text");
  if($text !="/start"){
  bot('sendMessage',[
  'chat_id'=>$chat_id,
